@@ -1,0 +1,14 @@
+All commands are the following;
+
+## Quickstart (Docker)
+```powershell
+# Merge + EDA
+docker run --rm -it -v "E:\uwf-zeek:/app" -v "E:\data\raw:/app/data/raw" -w /app uwf-zeek:latest python src/01_merge_events.py
+# Cross-phase IPs
+docker run --rm -it -v "E:\uwf-zeek:/app" -v "E:\data\raw:/app/data/raw" -w /app uwf-zeek:latest python src/02_interesting_ips.py
+# Graphs
+docker run --rm -it -v "E:\uwf-zeek:/app" -v "E:\data\raw:/app/data/raw" -w /app uwf-zeek:latest python src/03_build_graphs.py
+# HTML per focus IP
+docker run --rm -it -v "E:\uwf-zeek:/app" -v "E:\data\raw:/app/data/raw" -w /app uwf-zeek:latest python src/04_focus_html.py
+# MITRE narratives
+docker run --rm -it -v "E:\uwf-zeek:/app" -v "E:\data\raw:/app/data/raw" -w /app uwf-zeek:latest python src/06_attack_narratives.py
